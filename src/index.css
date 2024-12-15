@@ -1,3 +1,31 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
+@theme {
+  --color-brand-red: #ff0040;
+  --color-brand-green: #0c724a;
+  --color-brand-blue: #0d2252;
+}
 
+@utility highlight {
+  box-shadow: 0 4px 0 0 var(--color-brand-red);
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  .text-shadow-lg {
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}
+
+.active {
+  @apply highlight transition;
+}
+
+html {
+  @apply bg-white;
+}
